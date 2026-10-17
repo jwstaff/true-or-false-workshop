@@ -1,7 +1,7 @@
 // Caches the app shell on first load so rounds, lab and checklist keep working if venue Wi-Fi drops.
 // Serves from cache immediately and refreshes the cache in the background.
 // Bump CACHE when the file list changes.
-const CACHE = "tof-workshop-v1";
+const CACHE = "tof-workshop-v2";
 const FILES = [
   "./",
   "./index.html",

@@ -127,11 +127,41 @@ legend{font-family:var(--display);font-weight:600;font-size:26px;padding:0;margi
 .pick b{display:block}
 .pick .muted{font-size:15px}
 .pick:has(input:checked){border-color:var(--true-bg);box-shadow:inset 0 0 0 1px var(--true-bg)}
-.combo{background:var(--stage);color:var(--stage-ink);border-radius:18px;padding:18px;display:grid;gap:10px}
-.combo .q{font-size:clamp(24px,6vw,32px)}
-.combo .x{color:var(--false-bg);font-family:var(--display);font-size:18px}
-.combo p{color:var(--stage-muted)}
-.combo b{color:var(--stage-ink)}
+/* Lab stages */
+.progress ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.progress li>*{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;min-height:44px;padding:8px 8px 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:700;line-height:1.2;text-align:left;color:var(--ink)}
+.progress button{cursor:pointer}
+.progress .cur{background:var(--stage);border-color:var(--stage);color:var(--stage-ink)}
+.progress .off{color:var(--muted);background:transparent;border-style:dashed}
+.progress .num{font-family:var(--display);font-size:18px;line-height:1}
+.step-title{font-size:clamp(30px,8vw,44px)}
+.recap{background:var(--surface-2);border-radius:12px;padding:12px 14px;display:grid;gap:4px;justify-items:start}
+.recap .lab{font-size:13px;font-weight:700;color:var(--muted)}
+.fit{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:10px}
+.fit:has(input:checked){border-color:var(--true-bg);box-shadow:inset 0 0 0 1px var(--true-bg)}
+.fit-pick{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.fit-pick input{margin-top:4px;accent-color:var(--true-bg);width:22px;height:22px;flex:none}
+.fit-pick>span{display:grid;gap:2px}
+.fit-name{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.15}
+.badge{justify-self:start;font-size:12px;font-weight:800;border-radius:6px;padding:2px 8px}
+.badge.best{background:var(--true-bg);color:var(--true-ink)}
+.badge.plain:empty{display:none}
+.badge.plain{background:var(--surface-2);color:var(--ink)}
+.fit dl{margin:0 0 0 34px;display:grid;gap:4px;font-size:15px}
+.fit dt{font-weight:800;font-size:13px;color:var(--accent);margin-top:6px}
+.fit dd{margin:0}
+details.others{display:grid;gap:10px}
+details.others summary{cursor:pointer;font-weight:700;color:var(--accent);min-height:44px;display:flex;align-items:center}
+details.others .picker{margin-top:10px}
+.mentor{background:var(--stage);color:var(--stage-ink);border-radius:20px;padding:20px;display:grid;gap:10px}
+.mentor .count,.mentor .who{color:var(--stage-muted);font-size:14px;font-weight:700}
+.mentor h2{font-size:clamp(28px,7vw,38px)}
+.mentor .says{display:grid;gap:10px;font-size:17px}
+.mentor ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.mentor blockquote{display:grid;gap:8px;margin:0;padding:10px 14px;border-left:4px solid var(--false-bg);background:var(--stage-card);border-radius:0 10px 10px 0}
+.mentor .source{color:var(--stage-muted)}
+.turn{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:12px}
+.turn .btn.secondary{justify-self:start}
 .field{display:grid;gap:6px}
 .field label,.field .lbl{font-weight:700;font-size:15px}
 .field .hint{font-size:14px;color:var(--muted)}
@@ -149,7 +179,30 @@ textarea{min-height:84px;resize:vertical}
 .verdict.good{background:var(--true-bg);color:var(--true-ink)}
 .verdict.almost{background:var(--unk-bg);color:var(--unk-ink)}
 .verdict.notyet{background:var(--false-bg);color:var(--false-ink)}
-.summary{background:var(--surface-2);border-radius:12px;padding:12px 14px;font-size:15px;display:grid;gap:4px}
+
+/* Protocol */
+.protocol{background:var(--surface);border:2px solid var(--ink);border-radius:20px;padding:20px;display:grid;gap:14px}
+.p-head{display:grid;gap:6px;border-bottom:2px dashed var(--line);padding-bottom:14px}
+.p-head h2{font-size:clamp(30px,8vw,44px);text-transform:uppercase}
+.p-badge{justify-self:start;font-family:var(--display);font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:4px 10px;border-radius:8px;transform:rotate(-2deg)}
+.p-sec{display:grid;gap:6px;break-inside:avoid}
+.p-sec h3{font-family:var(--display);font-weight:600;font-size:20px;display:flex;gap:8px;align-items:center}
+.p-sec .big{font-size:20px;font-weight:700;line-height:1.3}
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.p-grid{grid-template-columns:1fr}}
+.ab{background:var(--surface-2);border-radius:12px;padding:12px;display:grid;gap:4px}
+.ab b{font-family:var(--display);font-size:22px}
+.p-dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+.p-dl dt{font-weight:700;color:var(--muted)}
+.p-dl dd{margin:0}
+.tbd{color:var(--muted);font-style:italic}
+.flags,.ticks{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tickbox{display:inline-block;width:18px;height:18px;border:2px solid var(--ink);border-radius:4px;margin-right:10px;vertical-align:-3px}
+.results{display:grid;gap:10px}
+.res{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:end}
+.res .blank{border-bottom:1.5px solid var(--ink);height:26px}
+.reading{margin:0;padding-left:22px;display:grid;gap:6px}
+.p-foot{border-top:2px dashed var(--line);padding-top:12px;display:grid;gap:6px}
 .checklist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .checklist li{display:grid;grid-template-columns:76px 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
 .tag{font-size:12px;font-weight:800;border-radius:6px;padding:3px 0;text-align:center;align-self:start}
@@ -163,6 +216,15 @@ textarea{min-height:84px;resize:vertical}
 .link-card h3{font-size:26px}
 .link-card .btn{justify-self:start}
 
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface-2:#F1EDE4;--ink:#000;--muted:#333;--line:#999;--accent:#000}
+  @page{margin:14mm}
+  body{background:#fff;color:#000;font-size:11pt;padding:0}
+  body::before,header.bar,footer.foot,.no-print,#live{display:none !important}
+  main{padding:0;max-width:none}
+  .protocol{border:none;padding:0;border-radius:0}
+  .p-badge{transform:none;border:1.5px solid #000}
+}
 footer.foot{max-width:760px;margin:0 auto;padding:0 16px 32px;color:var(--muted);font-size:13px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
@@ -193,7 +255,8 @@ const ADAPTERS = window.TOF_ADAPTERS;
 /* ---------- State (kept on this device) ---------- */
 const STORE_KEY = "tof-workshop-v1";
 const SCREENS = ["intro","r1","r2","r3","lab","check","wall"];
-const blankLab = () => ({ q:null, p:null, grade:"", a:"", b:"", aAuto:"", bAuto:"", assign:"", length:"", measure:"", mAuto:"",
+const blankLab = () => ({ step:1, mstep:0, q:null, p:null, grade:"", classes:"", own:"", predict:"",
+                          a:"", b:"", aAuto:"", bAuto:"", assign:"", length:"", measure:"", mAuto:"",
                           timing:"", noAI:false, same:false, feel:false, decision:"" });
 const fresh = () => ({ screen:"intro", pos:{ r1:0, r2:0 }, votes:{}, lab:blankLab() });
 const guessLang = () => { try { return (navigator.languages || [navigator.language || ""]).some(l => /^lv\b/i.test(l)) ? "lv" : "en"; } catch (e) { return "en"; } };
@@ -342,115 +405,268 @@ function viewR3(){
   </div>`;
 }
 
+/* ---------- Your test: four stages ----------
+ * 1 The AI effect (question) → 2 The principle (ranked by fit) → 3 The design (mentor walk-through, 6 parts)
+ * → 4 The protocol (the Check screen, printable).
+ */
+const PARTS = 6;
+// Checklist rules shown as live feedback under each mentor part (index = part).
+const PART_KEYS = [[], [], ["tasksOk","tasksFix"], ["compOk","compFix","chooseTip","oneTip"],
+  ["noAIOk","noAIFix","sameOk","sameFix","weekOk","daysOk","sameDayTip","feelOk","feelTip"], ["decOk","decTip"]];
+const SUGGESTED_SPLIT = { several:"sections", one:"swap" };
+
+function labStep(){
+  const L = state.lab;
+  let s = [1, 2, 3].includes(L.step) ? L.step : 1;
+  if (s >= 2 && !L.q) s = 1;
+  if (s === 3 && !L.p) s = 2;
+  return s;
+}
+function fitFor(q){ return (T().FIT[q] || []); }
+// What the research suggests for this pairing. A fit's prediction carries its own citation in the text, so the
+// principle's sources go with the principle's general finding only, never after the prediction.
+function expectFor(L){
+  const t = T(), f = fitFor(L.q).find(x => x.p === L.p), r = t.RESEARCH[L.p];
+  return { predict: f ? f.expect : null, says:r.says, source:r.source };
+}
+function expectHtml(e){
+  const general = `${esc(e.says)} <span class="source">(${esc(e.source)})</span>`;
+  return e.predict ? `<p>${esc(e.predict)}</p><p class="small">${general}</p>` : `<p>${general}</p>`;
+}
+
+function progress(active){
+  const u = U(), L = state.lab;
+  const open = [true, !!L.q, !!(L.q && L.p), !!(L.q && L.p)];
+  return `<nav class="progress" aria-label="${esc(u.progressLabel)}"><ol>${u.steps.map((s, i) => {
+    const n = i + 1, inner = `<span class="num" aria-hidden="true">${n}</span><span>${esc(s)}</span>`;
+    if (n === active) return `<li><span class="cur" aria-current="step">${inner}</span></li>`;
+    return `<li>${open[i] ? `<button type="button" data-step="${n}">${inner}</button>` : `<span class="off">${inner}</span>`}</li>`;
+  }).join("")}</ol></nav>`;
+}
+function stepHead(n, title, lede){
+  const u = U();
+  return `<div class="stack" style="gap:8px">
+    <p class="kicker">${esc(u.stepOf(n, 4))} · ${esc(u.steps[n - 1])}</p>
+    <h1 class="step-title display">${esc(title)}</h1>
+    ${lede ? `<p class="lede">${esc(lede)}</p>` : ""}
+  </div>`;
+}
+
 function viewLab(){
+  const s = state.lab.step = labStep();  // keep the stored stage in line with the one shown
+  return s === 1 ? viewStep1() : s === 2 ? viewStep2() : viewStep3();
+}
+
+function viewStep1(){
   const t = T(), u = U(), L = state.lab;
-  const q = byId(t.QUESTIONS, L.q), p = byId(t.PRINCIPLES, L.p);
-  const pick = (name, list, cur, sub) => list.map(x => `
-    <label class="pick"><input type="radio" name="${name}" value="${x.id}" ${cur === x.id ? "checked" : ""}>
-      <span><b>${esc(name === "q" ? x.title : x.name)}</b><span class="muted">${esc(sub(x))}</span></span></label>`).join("");
-  const pname = p ? (u.lowerName ? p.name.toLowerCase() : p.name) : "";
-  const combo = q && p ? `
-    <section class="combo" aria-label="${esc(u.pairing)}">
-      <p class="x">${esc(u.pairing)}</p>
-      <h2 class="q display">${esc(q.title)}</h2>
-      <p>${u.through(`<b>${esc(pname)}</b>`, esc(p.idea))}</p>
-    </section>
-    ${designForm(L)}` : `<p class="empty">${esc(u.pickFirst)}</p>`;
   return `
   <div class="stack">
-    <div class="stack" style="gap:8px"><p class="kicker">${esc(u.labKicker)}</p><p class="lede">${esc(u.labLede)}</p></div>
-    <fieldset><legend>${esc(u.leg1)}</legend><div class="picker">${pick("q", t.QUESTIONS, L.q, x => x.evidence)}</div></fieldset>
-    <fieldset><legend>${esc(u.leg2)}</legend><div class="picker">${pick("p", t.PRINCIPLES, L.p, x => x.idea)}</div></fieldset>
-    ${combo}
+    ${progress(1)}
+    ${stepHead(1, u.s1Title, u.s1Lede)}
+    <fieldset><legend class="sr">${esc(u.s1Title)}</legend><div class="picker">${t.QUESTIONS.map(x => `
+      <label class="pick"><input type="radio" name="q" value="${x.id}" ${L.q === x.id ? "checked" : ""}>
+        <span><b>${esc(x.title)}</b><span class="muted">${esc(x.evidence)}</span></span></label>`).join("")}</div></fieldset>
+    <button class="btn block" type="button" data-step="2" ${L.q ? "" : "disabled"}>${esc(u.toS2)}</button>
+  </div>`;
+}
+
+function viewStep2(){
+  const t = T(), u = U(), L = state.lab;
+  const q = byId(t.QUESTIONS, L.q), fits = fitFor(L.q);
+  const fitIds = fits.map(f => f.p);
+  const card = (p, f, badge) => {
+    const r = t.RESEARCH[p.id], did = `fit-${p.id}`;
+    return `<div class="fit">
+      <label class="fit-pick"><input type="radio" name="p" value="${p.id}" ${L.p === p.id ? "checked" : ""} aria-describedby="${did}">
+        <span><span class="badge ${badge ? "best" : "plain"}">${esc(badge || "")}</span><b class="fit-name">${esc(p.name)}</b><span class="muted">${esc(p.idea)}</span></span></label>
+      <dl id="${did}">
+        ${f ? `<dt>${esc(u.whyFits)}</dt><dd>${esc(f.why)}</dd>
+        <dt>${esc(u.expectLbl)}</dt><dd>${esc(f.expect)}</dd>
+        <dt>${esc(u.addLbl)}</dt><dd>${esc(f.add)}</dd>` : ""}
+        <dt>${esc(u.researchLbl)}</dt><dd>${esc(r.says)} <span class="source">(${esc(r.source)})</span></dd>
+      </dl>
+    </div>`;
+  };
+  const others = t.PRINCIPLES.filter(p => !fitIds.includes(p.id));
+  const otherOpen = L.p && !fitIds.includes(L.p);
+  return `
+  <div class="stack">
+    ${progress(2)}
+    ${stepHead(2, u.s2Title, u.s2Lede)}
+    <div class="recap"><span class="lab">${esc(u.yourQ)}</span><b>${esc(q.title)}</b>
+      <button class="linkbtn" type="button" data-step="1">${esc(u.changeQ)}</button></div>
+    <fieldset><legend class="sr">${esc(u.s2Title)}</legend>
+      <div class="picker">${fits.map((f, i) => card(byId(t.PRINCIPLES, f.p), f, i === 0 ? u.best : u.alsoFit)).join("")}</div>
+      <details class="others" ${otherOpen ? "open" : ""}><summary>${esc(u.otherPrinciples)}</summary>
+        <p class="muted small">${esc(u.otherHint)}</p>
+        <div class="picker">${others.map(p => card(p, null, "")).join("")}</div>
+      </details>
+    </fieldset>
+    <button class="btn block" type="button" data-step="3" ${L.p ? "" : "disabled"}>${esc(u.toS3)}</button>
+  </div>`;
+}
+
+function viewStep3(){
+  const t = T(), u = U(), L = state.lab;
+  const i = Math.max(0, Math.min(PARTS - 1, L.mstep || 0)), m = u.MENTOR[i];
+  let says = m.says.map(x => `<p>${esc(x)}</p>`).join("");
+  if (i === 1) says += `<blockquote>${expectHtml(expectFor(L))}</blockquote>`;
+  if (i === 3) says = `<p>${esc(L.classes === "several" ? m.saysSeveral : L.classes === "one" ? m.saysOne : m.saysUnset)}</p>` + says;
+  if (i === 5) says += `<ul>${u.READING.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  const last = i === PARTS - 1;
+  return `
+  <div class="stack">
+    ${progress(3)}
+    ${stepHead(3, u.s3Title, "")}
+    <section class="mentor" aria-labelledby="mentor-h">
+      <p class="count">${esc(u.partOf(i + 1, PARTS))}</p>
+      <h2 id="mentor-h" class="display">${esc(m.title)}</h2>
+      <p class="who">${esc(u.mentorLbl)}</p>
+      <div class="says">${says}</div>
+    </section>
+    <section class="turn" aria-labelledby="turn-h">
+      <h3 id="turn-h" class="kicker">${esc(u.yourTurn)}</h3>
+      <p><b>${esc(m.ask)}</b></p>
+      ${partFields(i)}
+      <div id="partfb">${partFeedback(i)}</div>
+    </section>
+    <div class="row">
+      <button class="btn secondary" type="button" ${i === 0 ? 'data-step="2"' : `data-part="${i - 1}"`}>${esc(u.back)}</button>
+      ${last ? `<button class="btn" type="button" data-step="4">${esc(u.toProtocol)}</button>`
+             : `<button class="btn" type="button" data-part="${i + 1}">${esc(u.nextPart)}</button>`}
+    </div>
   </div>`;
 }
 function opt(pairs, cur, placeholder){
   return `<option value="" ${!cur ? "selected" : ""} disabled>${esc(placeholder)}</option>` +
     pairs.map(([k, l]) => `<option value="${k}" ${cur === k ? "selected" : ""}>${esc(l)}</option>`).join("");
 }
-function designForm(L){
-  const t = T(), u = U();
-  return `
-  <fieldset><legend>${esc(u.leg3)}</legend>
-    <div class="field"><label for="f-grade">${esc(u.fClass)}</label><input id="f-grade" type="text" data-f="grade" maxlength="80" placeholder="${esc(u.fClassPh)}" value="${esc(L.grade)}"></div>
-    <div class="field"><label for="f-a">${esc(u.fA)}</label><span class="hint" id="h-a">${esc(u.fAHint)}</span><textarea id="f-a" data-f="a" maxlength="300" aria-describedby="h-a">${esc(L.a)}</textarea></div>
-    <div class="field"><label for="f-b">${esc(u.fB)}</label><span class="hint" id="h-b">${esc(u.fBHint)}</span><textarea id="f-b" data-f="b" maxlength="300" aria-describedby="h-b">${esc(L.b)}</textarea></div>
-    <div class="grid2">
-      <div class="field"><label for="f-assign">${esc(u.fAssign)}</label><select id="f-assign" data-f="assign">${opt(t.ASSIGN, L.assign, u.choose)}</select></div>
-      <div class="field"><label for="f-length">${esc(u.fLength)}</label><select id="f-length" data-f="length">${opt(t.LENGTH, L.length, u.choose)}</select></div>
-    </div>
-    <div class="field"><label for="f-measure">${esc(u.fMeasure)}</label><input id="f-measure" type="text" data-f="measure" maxlength="200" value="${esc(L.measure)}"></div>
-    <div class="field"><label for="f-timing">${esc(u.fTiming)}</label><select id="f-timing" data-f="timing">${opt(t.TIMING, L.timing, u.choose)}</select></div>
-    <fieldset class="field"><legend class="lbl" style="font-family:inherit;font-size:15px;margin:0">${esc(u.checkAll)}</legend>
-      <div class="checks">
-        <label class="check"><input type="checkbox" data-f="noAI" ${L.noAI ? "checked" : ""}> ${esc(u.cNoAI)}</label>
-        <label class="check"><input type="checkbox" data-f="same" ${L.same ? "checked" : ""}> ${esc(u.cSame)}</label>
-        <label class="check"><input type="checkbox" data-f="feel" ${L.feel ? "checked" : ""}> ${esc(u.cFeel)}</label>
-      </div></fieldset>
-    <div class="field"><label for="f-decision">${esc(u.fDecision)}</label><input id="f-decision" type="text" data-f="decision" maxlength="200" placeholder="${esc(u.fDecisionPh)}" value="${esc(L.decision)}"></div>
-    <button class="btn block" type="button" data-go="check">${esc(u.checkBtn)}</button>
-  </fieldset>`;
+function partFields(i){
+  const t = T(), u = U(), L = state.lab, q = byId(t.QUESTIONS, L.q);
+  const text = (id, f, lbl, max, extra = "") => `<div class="field"><label for="${id}">${esc(lbl)}</label><input id="${id}" type="text" data-f="${f}" maxlength="${max}" value="${esc(L[f])}" ${extra}></div>`;
+  const select = (id, f, lbl, list) => `<div class="field"><label for="${id}">${esc(lbl)}</label><select id="${id}" data-f="${f}">${opt(list, L[f], u.choose)}</select></div>`;
+  const area = (id, f, lbl, hint) => `<div class="field"><label for="${id}">${esc(lbl)}</label><span class="hint" id="h-${id}">${esc(hint)}</span><textarea id="${id}" data-f="${f}" maxlength="300" aria-describedby="h-${id}">${esc(L[f])}</textarea></div>`;
+  const box = (f, lbl) => `<label class="check"><input type="checkbox" data-f="${f}" ${L[f] ? "checked" : ""}> ${esc(lbl)}</label>`;
+  if (i === 0) return text("f-grade", "grade", u.fClass, 80, `placeholder="${esc(u.fClassPh)}"`) + select("f-classes", "classes", u.fClasses, t.CLASSES);
+  if (i === 1) return `<div class="field"><label for="f-own">${esc(u.fOwn)}</label><span class="hint" id="h-own">${esc(u.fOwnHint)}</span>
+      <input id="f-own" type="text" data-f="own" maxlength="200" placeholder="${esc(q.title)}" value="${esc(L.own)}" aria-describedby="h-own"></div>` +
+    select("f-predict", "predict", u.fPredict, t.PREDICT);
+  if (i === 2) return area("f-a", "a", u.fA, u.fAHint) + area("f-b", "b", u.fB, u.fBHint);
+  if (i === 3) {
+    const sug = SUGGESTED_SPLIT[L.classes];
+    return select("f-assign", "assign", u.fAssign, t.ASSIGN) +
+      (sug && L.assign !== sug ? `<button class="btn secondary" type="button" data-action="suggest">${esc(u.useSuggest)}: ${esc(label(t.ASSIGN, sug))}</button>` : "") +
+      select("f-length", "length", u.fLength, t.LENGTH);
+  }
+  if (i === 4) return text("f-measure", "measure", u.fMeasure, 200) + select("f-timing", "timing", u.fTiming, t.TIMING) +
+    `<fieldset class="field"><legend class="lbl">${esc(u.checkAll)}</legend><div class="checks">${box("noAI", u.cNoAI)}${box("same", u.cSame)}${box("feel", u.cFeel)}</div></fieldset>`;
+  return text("f-decision", "decision", u.fDecision, 200, `placeholder="${esc(u.fDecisionPh)}"`);
+}
+function partFeedback(i){
+  const u = U(), keys = PART_KEYS[i];
+  if (!keys.length) return "";
+  const items = evaluate(state.lab).items.filter(x => keys.includes(x.key));
+  return `<p class="small muted" style="margin-top:6px">${esc(u.soFar)}</p>
+    <ul class="checklist">${items.map(x => `<li><span class="tag ${x.s}">${esc(u.tags[x.s])}</span><span>${esc(u.ev[x.key])}</span></li>`).join("")}</ul>`;
+}
+function updatePartFeedback(){
+  const box = document.getElementById("partfb");
+  if (box && state.screen === "lab") box.innerHTML = partFeedback(Math.max(0, Math.min(PARTS - 1, state.lab.mstep || 0)));
 }
 
-function designSummary(L){
-  const t = T(), u = U();
-  const q = byId(t.QUESTIONS, L.q), p = byId(t.PRINCIPLES, L.p);
-  return `<div class="summary">
-    <span><b>${esc(q.title)}</b></span>
-    <span>${esc(u.sumPrinciple)}: ${esc(p.name)}${L.grade ? ` · ${esc(L.grade)}` : ""}</span>
-    <span>A: ${esc(L.a)}</span><span>B: ${esc(L.b)}</span>
-    <span>${esc(u.sumMeasure)}: ${esc(L.measure || u.notSet)}${L.timing ? `, ${esc(label(t.TIMING, L.timing).toLowerCase())}` : ""}</span>
-  </div>`;
-}
+/* ---------- Protocol (step 4) ---------- */
 // Plain-text version for "Copy my design", in the player's current language.
 function designText(L){
   const t = T(), u = U(), ev = evaluate(L);
-  const q = byId(t.QUESTIONS, L.q), p = byId(t.PRINCIPLES, L.p);
+  const q = byId(t.QUESTIONS, L.q), p = byId(t.PRINCIPLES, L.p), e = expectFor(L);
   const line = (cond, text) => cond ? text : null;  // null = line left out
   return [
-    q.title,
-    `${u.sumPrinciple}: ${p.name}`,
-    line(L.grade, `${u.fClass}: ${L.grade}`),
+    u.protoTitle.toUpperCase(),
+    "",
+    `${u.pQ}: ${L.own || q.title}`,
+    `${u.pRoot}: ${p.name} (${p.idea})`,
+    line(L.grade || L.classes, `${u.pClass}: ${[L.grade, label(t.CLASSES, L.classes)].filter(Boolean).join(", ")}`),
+    line(L.predict, `${u.pHunch}: ${label(t.PREDICT, L.predict)}`),
+    `${u.pResearch}: ${e.predict ? e.predict + " " : ""}${e.says} (${e.source})`,
+    "",
     `${u.fA}: ${L.a}`,
     `${u.fB}: ${L.b}`,
     line(L.assign, `${u.fAssign}: ${label(t.ASSIGN, L.assign)}`),
     line(L.length, `${u.fLength}: ${label(t.LENGTH, L.length)}`),
-    `${u.fMeasure}: ${L.measure || u.notSet}`,
-    line(L.timing, `${u.fTiming}: ${label(t.TIMING, L.timing)}`),
+    `${u.pMeasure}: ${L.measure || u.notSetYet}`,
+    line(L.timing, `${u.pWhen}: ${label(t.TIMING, L.timing)}`),
     line(L.noAI, `✓ ${u.cNoAI}`), line(L.same, `✓ ${u.cSame}`), line(L.feel, `✓ ${u.cFeel}`),
-    line(L.decision, `${u.fDecision} ${L.decision}`),
+    `${u.pDecide}: ${L.decision || u.notSetYet}`,
     "",
-    `${u.verdictLabel}: ${t.VERDICT_COPY[ev.verdict][0]}`,
+    `${u.pVerdict}: ${t.VERDICT_COPY[ev.verdict][0]}`,
     ...ev.items.map(x => `[${u.tags[x.s]}] ${u.ev[x.key]}`),
     "",
+    u.pFoot,
     u.ethics
   ].filter(x => x !== null).join("\n");
 }
 
 function viewCheck(){
   const t = T(), u = U(), L = state.lab;
-  const head = `<p class="kicker">${esc(u.checkKicker)}</p>`;
-  if (!L.q || !L.p) return `<div class="stack">${head}<p class="empty">${esc(u.checkNeedPair)}</p>
+  if (!L.q || !L.p) return `<div class="stack">${progress(4)}
+    <p class="empty">${esc(u.checkNeedPair)}</p>
     <button class="btn block" type="button" data-go="lab">${esc(u.goLab)}</button></div>`;
   const ev = evaluate(L);
   const [title, sub] = t.VERDICT_COPY[ev.verdict];
   return `
   <div class="stack">
-    ${head}
-    <section class="verdict ${ev.verdict}" aria-label="${esc(u.verdictLabel)}"><h2 class="display">${esc(title)}</h2><p>${esc(sub)}</p></section>
-    ${designSummary(L)}
-    <ul class="checklist">${ev.items.map(x => `<li><span class="tag ${x.s}">${esc(u.tags[x.s])}</span><span>${esc(u.ev[x.key])}</span></li>`).join("")}</ul>
-    <p class="note">${esc(u.ethics)}</p>
-    ${ADAPTERS.data ? "" : `<p class="note">${esc(u.shareOff)}</p>`}
-    <button class="btn block" type="button" data-action="copy">${esc(u.copy)}</button>
-    <p class="note" role="status" ${copyMsg ? "" : "hidden"}>${esc(copyMsg)}</p>
-    ${copyFallback ? `<label class="field"><span class="sr">${esc(u.copyBoxLabel)}</span><textarea class="copybox" readonly id="copybox">${esc(designText(L))}</textarea></label>` : ""}
-    <div class="row">
-      <button class="linkbtn" type="button" data-go="lab">${esc(u.editDesign)}</button>
-      <button class="linkbtn" type="button" data-go="wall">${esc(u.seeWall)}</button>
+    <div class="no-print stack">
+      ${progress(4)}
+      <p class="kicker">${esc(u.stepOf(4, 4))} · ${esc(u.steps[3])}</p>
+      <section class="verdict ${ev.verdict}" aria-label="${esc(u.verdictLabel)}"><h2 class="display">${esc(title)}</h2><p>${esc(sub)}</p></section>
+      <ul class="checklist">${ev.items.map(x => `<li><span class="tag ${x.s}">${esc(u.tags[x.s])}</span><span>${esc(u.ev[x.key])}</span></li>`).join("")}</ul>
+      <p class="note">${esc(u.ethics)}</p>
     </div>
-    ${nextSteps()}
+    ${protocol(L, ev)}
+    <div class="no-print stack">
+      ${ADAPTERS.data ? "" : `<p class="note">${esc(u.shareOff)}</p>`}
+      <button class="btn block" type="button" data-action="print">${esc(u.print)}</button>
+      <button class="btn secondary block" type="button" data-action="copy">${esc(u.copy)}</button>
+      <p class="note" role="status" ${copyMsg ? "" : "hidden"}>${esc(copyMsg)}</p>
+      ${copyFallback ? `<label class="field"><span class="sr">${esc(u.copyBoxLabel)}</span><textarea class="copybox" readonly id="copybox">${esc(designText(L))}</textarea></label>` : ""}
+      <div class="row">
+        <button class="linkbtn" type="button" data-step="3">${esc(u.backDesign)}</button>
+        <button class="linkbtn" type="button" data-go="wall">${esc(u.seeWall)}</button>
+      </div>
+      ${nextSteps()}
+    </div>
   </div>`;
+}
+
+function protocol(L, ev){
+  const t = T(), u = U();
+  const q = byId(t.QUESTIONS, L.q), p = byId(t.PRINCIPLES, L.p), e = expectFor(L);
+  const or = v => v ? esc(v) : `<span class="tbd">${esc(u.notSetYet)}</span>`;
+  const sec = (icon, h, body) => `<section class="p-sec"><h3><span class="ico" aria-hidden="true">${icon}</span>${esc(h)}</h3>${body}</section>`;
+  const who = [L.grade, label(t.CLASSES, L.classes)].filter(Boolean).join(" · ");
+  return `
+  <article class="protocol" aria-labelledby="proto-h">
+    <header class="p-head">
+      <p class="p-badge v-${ev.verdict === "good" ? "true" : ev.verdict === "almost" ? "unknown" : "false"}">${esc(u.pVerdict)}: ${esc(t.VERDICT_COPY[ev.verdict][0])}</p>
+      <h2 id="proto-h" class="display">${esc(u.protoTitle)}</h2>
+      <p class="muted">${esc(u.protoSub)}</p>
+    </header>
+    ${sec("🔍", u.pQ, `<p class="big">${esc(L.own || q.title)}</p><p class="muted small">${esc(u.pRoot)}: <b>${esc(p.name)}</b>. ${esc(p.idea)}</p>`)}
+    <div class="p-grid">
+      ${sec("🏫", u.pClass, `<p>${or(who)}</p>`)}
+      ${sec("💡", u.pHunch, `<p>${or(label(t.PREDICT, L.predict))}</p>`)}
+    </div>
+    ${sec("📚", u.pResearch, expectHtml(e))}
+    ${sec("⚖️", u.pVersions, `<div class="p-grid"><div class="ab"><b>A</b><p>${or(L.a)}</p></div><div class="ab"><b>B</b><p>${or(L.b)}</p></div></div>`)}
+    ${sec("🗓️", u.pPlan, `<dl class="p-dl"><dt>${esc(u.fAssign)}</dt><dd>${or(label(t.ASSIGN, L.assign))}</dd><dt>${esc(u.fLength)}</dt><dd>${or(label(t.LENGTH, L.length))}</dd></dl>`)}
+    ${sec("📏", u.pMeasure, `<p>${or(L.measure)}</p><dl class="p-dl"><dt>${esc(u.pWhen)}</dt><dd>${or(label(t.TIMING, L.timing))}</dd></dl>
+      <ul class="flags">${[["noAI", u.cNoAI], ["same", u.cSame], ["feel", u.cFeel]].map(([k, l]) => `<li><span aria-hidden="true">${L[k] ? "✓" : "○"}</span> ${esc(l)}</li>`).join("")}</ul>`)}
+    ${sec("✅", u.pBefore, `<ul class="ticks">${u.BEFORE.map(x => `<li><span class="tickbox" aria-hidden="true"></span>${esc(x)}</li>`).join("")}</ul>`)}
+    ${sec("📝", u.pResults, `<div class="results">${u.RESULTS.map(x => `<div class="res"><span>${esc(x)}</span><span class="blank"></span></div>`).join("")}</div>`)}
+    ${sec("📊", u.pReading, `<ol class="reading">${u.READING.map(x => `<li>${esc(x)}</li>`).join("")}</ol>`)}
+    ${sec("🧭", u.pDecide, `<p>${or(L.decision)}</p>`)}
+    <footer class="p-foot"><p><b>${esc(u.pFoot)}</b></p><p class="small">${esc(u.ethics)}</p></footer>
+  </article>`;
 }
 
 function viewWall(){
@@ -522,6 +738,19 @@ document.addEventListener("click", e => {
     return;
   }
   if (d.prev) { state.pos[d.prev] = Math.max(0, state.pos[d.prev] - 1); saveNow(); render(); return; }
+  if (d.step) {
+    const n = +d.step;
+    if (n === 4) { go("check"); return; }
+    state.lab.step = n; state.screen === "lab" ? show("lab") : go("lab");
+    return;
+  }
+  if (d.part) { state.lab.step = 3; state.lab.mstep = +d.part; show("lab"); return; }
+  if (d.action === "suggest") {
+    state.lab.assign = SUGGESTED_SPLIT[state.lab.classes] || state.lab.assign; saveNow(); rerenderInPlace();
+    document.getElementById("f-assign")?.focus({ preventScroll:true });
+    return;
+  }
+  if (d.action === "print") { window.print(); return; }
   if (d.action === "copy") copyDesign();
 });
 document.addEventListener("change", e => {
@@ -535,13 +764,17 @@ document.addEventListener("change", e => {
     if (q) { if (!L.measure || L.measure === L.mAuto) L.measure = q.measure; L.mAuto = q.measure; }
     saveNow(); rerenderInPlace();
     document.querySelector(`input[name="${el.name}"][value="${el.value}"]`)?.focus({ preventScroll:true });
-    if (q && p) announce(U().announcePair);
+    if (el.name === "p") announce(U().announcePrinciple);
     return;
   }
-  if (el.dataset && el.dataset.f) setField(el);
+  if (el.dataset && el.dataset.f) {
+    setField(el);
+    // The suggested-split button depends on the current choice.
+    if (el.dataset.f === "assign") { rerenderInPlace(); document.getElementById("f-assign")?.focus({ preventScroll:true }); }
+  }
 });
 document.addEventListener("input", e => { const el = e.target; if (el.dataset && el.dataset.f && el.type !== "checkbox") setField(el); });
-function setField(el){ state.lab[el.dataset.f] = el.type === "checkbox" ? el.checked : el.value; save(); }
+function setField(el){ state.lab[el.dataset.f] = el.type === "checkbox" ? el.checked : el.value; save(); updatePartFeedback(); }
 
 async function copyDesign(){
   const u = U(), text = designText(state.lab);

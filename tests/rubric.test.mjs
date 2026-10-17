@@ -149,3 +149,22 @@ test("content ids match in both languages and the rubric's id lists", () => {
   assert.deepEqual(ids("en", "QUESTIONS"), ["transfer", "writing", "reasoning", "gaps", "enjoy", "creation"]);
   assert.deepEqual(ids("en", "PRINCIPLES"), ["difficulty", "protege", "testing", "generation", "examples", "feedback"]);
 });
+
+test("stage 2 content: every question has ranked fits and every principle has research, in both languages", () => {
+  const pids = I18N.en.PRINCIPLES.map(p => p.id);
+  for (const lang of ["en", "lv"]) {
+    const t = I18N[lang];
+    for (const q of t.QUESTIONS) {
+      const fits = t.FIT[q.id];
+      assert.ok(Array.isArray(fits) && fits.length >= 2, `${lang} FIT.${q.id}`);
+      for (const f of fits) {
+        assert.ok(pids.includes(f.p), `${lang} FIT.${q.id} → ${f.p}`);
+        for (const k of ["why", "expect", "add"]) assert.ok(f[k] && f[k].length > 20, `${lang} FIT.${q.id}.${f.p}.${k}`);
+      }
+      assert.equal(new Set(fits.map(f => f.p)).size, fits.length, `${lang} FIT.${q.id} has no duplicates`);
+    }
+    for (const id of pids) assert.ok(t.RESEARCH[id]?.says && t.RESEARCH[id]?.source, `${lang} RESEARCH.${id}`);
+    assert.equal(t.ui.MENTOR.length, 6, `${lang} six mentor parts`);
+  }
+  for (const q of I18N.en.QUESTIONS) assert.deepEqual(I18N.en.FIT[q.id].map(f => f.p), I18N.lv.FIT[q.id].map(f => f.p), `same ranking in both languages: ${q.id}`);
+});

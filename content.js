@@ -48,10 +48,11 @@ const REVIEW = {
   mentor_measure:{ reviewedBy:null, reviewedOn:null }   // mentor part 5 restates Bastani (2025)
 };
 
-// Exit links (check both still load on the morning of the event).
+// Exit links (check all three still load on the morning of the event).
 const LINKS = {
   tinkery:  "https://aitinkery.com/playbook",
-  flashLab: "https://flashlab.stanford.edu/"
+  flashLab: "https://flashlab.stanford.edu/",
+  evidence: "https://scale.stanford.edu/research-in-action/understanding-evidence-base-ai-k12-education"
 };
 
 const I18N = {
@@ -327,6 +328,9 @@ en: {
     flashName:"AI Flash Lab",
     flashBody:"A facilitator toolkit for a 2- or 3-hour workshop where teams design an AI solution to an education challenge, from problem to prototype to pitch.",
     flashCta:"Open AI Flash Lab",
+    evidenceName:"The Evidence Base on AI in K-12",
+    evidenceBody:"The Stanford SCALE review this app's AI claims come from: what studies show so far, what's still unknown, and how to read the evidence.",
+    evidenceCta:"Read the evidence base",
     announce:v => `The answer is ${v}.`, announcePrinciple:"Principle chosen. Continue when you’re ready.",
     foot:"Evidence from Fesler, Martinez Claeys, Agnew & Loeb (2026), The Evidence Base on AI in K-12, Stanford SCALE; Liang et al. (2023); and the learning-science studies cited on each card. Projects: Stanford Accelerator for Learning seed grants."
   }
@@ -601,6 +605,9 @@ lv: {
     flashName:"AI Flash Lab",
     flashBody:"Vadītāja rīkkopa 2 vai 3 stundu darbnīcai, kurā komandas izstrādā MI risinājumu kādam izglītības izaicinājumam: no problēmas līdz prototipam un prezentācijai.",
     flashCta:"Atvērt AI Flash Lab",
+    evidenceName:"The Evidence Base on AI in K-12",
+    evidenceBody:"Stanford SCALE pārskats, no kura nāk šīs lietotnes apgalvojumi par MI: ko pētījumi rāda līdz šim, kas vēl nav zināms un kā lasīt pierādījumus.",
+    evidenceCta:"Lasīt pierādījumu pārskatu",
     announce:v => `Atbilde: ${v}.`, announcePrinciple:"Princips izvēlēts. Turpiniet, kad vēlaties.",
     foot:"Pierādījumi: Fesler, Martinez Claeys, Agnew un Loeb (2026), The Evidence Base on AI in K-12, Stanford SCALE; Liang u. c. (2023); un katrā kartītē minētie mācīšanās zinātnes pētījumi. Projekti: Stanford Accelerator for Learning sēklas granti."
   }

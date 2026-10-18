@@ -684,7 +684,8 @@ function nextSteps(){
   const u = U();
   const cards = [
     { url:LINKS.tinkery, name:u.tinkeryName, body:u.tinkeryBody, cta:u.tinkeryCta },
-    { url:LINKS.flashLab, name:u.flashName, body:u.flashBody, cta:u.flashCta }
+    { url:LINKS.flashLab, name:u.flashName, body:u.flashBody, cta:u.flashCta },
+    { url:LINKS.evidence, name:u.evidenceName, body:u.evidenceBody, cta:u.evidenceCta }
   ].filter(c => isRealLink(c.url));
   if (!cards.length) return "";
   return `

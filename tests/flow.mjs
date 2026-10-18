@@ -141,7 +141,7 @@ for (const width of [320, 390, 768]) {
     check(proto.includes("7th grade science") && proto.includes(t.PREDICT[0][1]) && proto.includes(t.ASSIGN[0][1]), "protocol shows the player's answers");
     check(await page.locator(".protocol .tbd").count() === 0, "complete design leaves nothing to decide");
     check(await page.locator(".protocol .tickbox").count() === 5 && await page.locator(".protocol .res").count() === 5, "printable tick boxes and results sheet");
-    check(await page.locator(".link-card").count() === 2, "next-step cards");
+    check(await page.locator(".link-card").count() === 3, "next-step cards");
     await page.click('[data-action="copy"]');
     await page.waitForTimeout(100);
     const clip = await page.evaluate(() => navigator.clipboard.readText());

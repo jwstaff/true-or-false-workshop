@@ -474,7 +474,7 @@ lv: {
   },
   ui:{
     nav:"Spēles sadaļas",
-    heroP:"Trīs īsas kārtas par mākslīgo intelektu (MI) un mācīšanos. Pēc tam jūs izveidosiet nelielu eksperimentu, ko varat veikt savā klasē.",
+    heroP:"Trīs īsi uzdevumi par mākslīgo intelektu (MI) un mācīšanos. Pēc tam jūs izveidosiet nelielu eksperimentu, ko varat veikt savā klasē.",
     start:"Sākt 1. kārtu",
     howtoLabel:"Kā tas notiek",
     howto:[["1. kārta: apgalvojumi par MI","Balsojiet: patiesi, aplami vai vēl nav zināms."],["2. kārta: mācīšanās zinātne","Tikai patiesi vai aplami."],["3. kārta: kur tie satiekas","Kā Stenfordas pētnieki pārbauda šo krustpunktu."],["Jūsu eksperiments","Savienojiet atklātu jautājumu par MI ar mācīšanās principu un ieskicējiet eksperimentu, ko ir vērts izmēģināt."]],
